@@ -1,22 +1,23 @@
-import { useState } from "react"
-import Navbar from "./components/Navbar"
-import Home from "./pages/Home"
-import Projects from "./pages/Projects"
-import About from "./pages/About"
-import Contact from "./pages/Contact"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./Navbar";
+import Home from "./Home";
+import About from "./About";
+import Projects from "./Projects";
+import Contact from "./Contact";
 
 function App() {
-  const [language, setLanguage] = useState("en")
-
   return (
-    <>
-      <Navbar language={language} setLanguage={setLanguage} />
-      <Home language={language} />
-      <Projects language={language} />
-      <About language={language} />
-      <Contact language={language} />
-    </>
-  )
+    <BrowserRouter>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

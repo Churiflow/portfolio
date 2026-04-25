@@ -1,50 +1,40 @@
-function Home({ language }) {
+import { useState } from "react";
 
-  const content = {
-    en: {
-      title: "Hi, I'm Robert 👋",
-      role: "Full Stack Developer",
-      desc: "I build modern web applications using React, Node.js , Python and PHP .",
-      btn: "View my projects"
-    },
+function Home() {
+  const [lang, setLang] = useState("es");
+
+  const text = {
     es: {
       title: "Hola, soy Robert 👋",
-      role: "Desarrollador Full Stack",
-      desc: "Construyo aplicaciones web modernas con React, Node.js , Python y PHP .",
-      btn: "Ver mis proyectos"
-    }
-  }
-
-  const t = content[language]
+      subtitle: "Desarrollador Full Stack",
+      contact: "Contáctame",
+    },
+    en: {
+      title: "Hi, I'm Robert 👋",
+      subtitle: "Full Stack Developer",
+      contact: "Contact me",
+    },
+  };
 
   return (
-    <section style={styles.hero}>
-      <div>
-        <h1>{t.title}</h1>
-        <h2>{t.role}</h2>
-        <p>{t.desc}</p>
-        <button style={styles.button}>{t.btn}</button>
+    <div className="home">
+      {/* selector idioma */}
+      <div className="language-switch">
+        <button onClick={() => setLang("es")}>ES</button>
+        <button onClick={() => setLang("en")}>EN</button>
       </div>
-    </section>
-  )
+
+      <h1>{text[lang].title}</h1>
+      <h2>{text[lang].subtitle}</h2>
+
+      {/* botones sociales */}
+      <div className="social-buttons">
+        <a href="https://github.com/Churiflow" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/robert-lopez-ita-b4147a277/" target="_blank">LinkedIn</a>
+        <a href="mailto:yavar852@gmail.com">Email</a>
+      </div>
+    </div>
+  );
 }
 
-const styles = {
-  hero: {
-    minHeight: "80vh",
-    display: "flex",
-    alignItems: "center",
-    padding: "40px"
-  },
-  button: {
-    marginTop: "20px",
-    padding: "12px 20px",
-    background: "#38bdf8",
-    border: "none",
-    borderRadius: "8px",
-    fontSize: "16px",
-    cursor: "pointer"
-  }
-}
-
-export default Home
+export default Home;
