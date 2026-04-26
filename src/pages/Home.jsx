@@ -1,17 +1,17 @@
 function Home() {
   return (
-    <section id="home" className="hero">
-      <h1>Full Stack Developer</h1>
-      <p>React • Node • PostgreSQL • Cybersecurity</p>
+    <div className="hero">
+      <h1>Robert Lopez</h1>
+      <p>Full Stack Developer • Cybersecurity • QA</p>
 
       <a 
-        href="https://www.linkedin.com/in/TU-LINKEDIN"
+        href="https://github.com/Churiflow"
         target="_blank"
         className="btn"
       >
-        LinkedIn
+        Ver mi GitHub
       </a>
-    </section>
+    </div>
   )
 }
 
