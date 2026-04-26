@@ -1,10 +1,10 @@
 function About() {
   return (
-    <div>
-      <h1>Sobre mí</h1>
-      <p>Desarrollador Full Stack y Cybersecurity enthusiast.</p>
-    </div>
-  );
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Junior Full Stack Developer and Cybersecurity enthusiast.</p>
+    </section>
+  )
 }
 
-export default About;
+export default About

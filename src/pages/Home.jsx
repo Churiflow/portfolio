@@ -1,18 +1,18 @@
 function Home() {
   return (
-    <div style={{padding: "40px"}}>
-      <h1>Hi, I'm Robert 👋</h1>
-      <h2>Full Stack Developer</h2>
+    <section id="home" className="hero">
+      <h1>Full Stack Developer</h1>
+      <p>React • Node • PostgreSQL • Cybersecurity</p>
 
-      <p>
-        I build web applications using React, Node.js and PostgreSQL.
-      </p>
-
-      <p>
-        Desarrollo aplicaciones web modernas con React, Node.js y PostgreSQL.
-      </p>
-    </div>
-  );
+      <a 
+        href="https://www.linkedin.com/in/TU-LINKEDIN"
+        target="_blank"
+        className="btn"
+      >
+        LinkedIn
+      </a>
+    </section>
+  )
 }
 
-export default Home;
+export default Home
