@@ -1,16 +1,29 @@
 function Projects() {
   return (
-    <div style={{padding: "40px"}}>
-      <h1>Projects / Proyectos</h1>
+    <div>
+      <h1>Mis proyectos</h1>
 
-      <ul>
-        <li>Node API REST Mongo</li>
-        <li>JWT Auth API Typescript</li>
-        <li>FullStack Project</li>
-        <li>Inventario App</li>
-        <li>CRM Full Stack</li>
-        <li>Event Manager App</li>
-      </ul>
+      <div>
+        <h3>App Barbería (Flask)</h3>
+        <a href="https://github.com/Churiflow/barber-app" target="_blank">
+          Ver en GitHub
+        </a>
+      </div>
+
+      <div>
+        <h3>Admin Usuarios React + Node</h3>
+        <a href="https://github.com/Churiflow/admin-users" target="_blank">
+          Ver en GitHub
+        </a>
+      </div>
+
+      <div>
+        <h3>Carrito React</h3>
+        <a href="https://github.com/Churiflow/react-cart" target="_blank">
+          Ver en GitHub
+        </a>
+      </div>
+
     </div>
   );
 }

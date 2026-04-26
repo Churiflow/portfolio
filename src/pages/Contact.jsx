@@ -1,8 +1,9 @@
 function Contact() {
   return (
-    <div style={{padding: "40px"}}>
-      <h1>Contact</h1>
-      <p>Email: robert.dev@email.com</p>
+    <div>
+      <h1>Contacto</h1>
+      <p>Email: yavar852@gmail.com</p>
+      <p>LinkedIn: https://www.linkedin.com/in/robert-lopez-ita-b4147a277</p>
     </div>
   );
 }
