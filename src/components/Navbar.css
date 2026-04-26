@@ -1,0 +1,26 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #0f172a;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 22px;
+}
+
+.links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #00d8ff;
+  font-weight: bold;
+}
+
+.links a:hover {
+  color: white;
+}

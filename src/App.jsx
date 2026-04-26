@@ -1,13 +1,14 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./Navbar";
-import Home from "./Home";
-import About from "./About";
-import Projects from "./Projects";
-import Contact from "./Contact";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Navbar />
 
       <Routes>
@@ -16,7 +17,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-    </BrowserRouter>
+
+    </Router>
   );
 }
 
