@@ -1,7 +1,4 @@
-import { useState } from "react";
-
-function Navbar() {
-  const [lang, setLang] = useState("es");
+function Navbar({ lang, setLang }) {
 
   const toggleLang = () => {
     setLang(lang === "es" ? "en" : "es");
@@ -19,12 +16,15 @@ function Navbar() {
         <button onClick={() => scrollTo("home")}>
           {lang === "es" ? "Inicio" : "Home"}
         </button>
+
         <button onClick={() => scrollTo("projects")}>
           {lang === "es" ? "Proyectos" : "Projects"}
         </button>
+
         <button onClick={() => scrollTo("about")}>
           {lang === "es" ? "Sobre mí" : "About"}
         </button>
+
         <button onClick={() => scrollTo("contact")}>
           {lang === "es" ? "Contacto" : "Contact"}
         </button>
