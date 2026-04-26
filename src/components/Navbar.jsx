@@ -1,18 +1,40 @@
-import { Link } from "react-router-dom"
+import { useState } from "react";
 
 function Navbar() {
+  const [lang, setLang] = useState("es");
+
+  const toggleLang = () => {
+    setLang(lang === "es" ? "en" : "es");
+  };
+
+  const scrollTo = (id) => {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <nav className="navbar">
-      <h2>Robert Dev</h2>
+      <h2 className="logo">Robert.dev</h2>
 
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/projects">Projects</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
-      </ul>
+      <div className="nav-links">
+        <button onClick={() => scrollTo("home")}>
+          {lang === "es" ? "Inicio" : "Home"}
+        </button>
+        <button onClick={() => scrollTo("projects")}>
+          {lang === "es" ? "Proyectos" : "Projects"}
+        </button>
+        <button onClick={() => scrollTo("about")}>
+          {lang === "es" ? "Sobre mí" : "About"}
+        </button>
+        <button onClick={() => scrollTo("contact")}>
+          {lang === "es" ? "Contacto" : "Contact"}
+        </button>
+
+        <button className="lang-btn" onClick={toggleLang}>
+          {lang === "es" ? "EN 🇺🇸" : "ES 🇨🇱"}
+        </button>
+      </div>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
