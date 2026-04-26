@@ -1,38 +1,16 @@
-import { useState } from "react";
-
 function Home() {
-  const [lang, setLang] = useState("es");
-
-  const text = {
-    es: {
-      title: "Hola, soy Robert 👋",
-      subtitle: "Desarrollador Full Stack",
-    },
-    en: {
-      title: "Hi, I'm Robert 👋",
-      subtitle: "Full Stack Developer",
-    },
-  };
-
   return (
-    <div className="home">
+    <div style={{padding: "40px"}}>
+      <h1>Hi, I'm Robert 👋</h1>
+      <h2>Full Stack Developer</h2>
 
-      {/* Selector idioma */}
-      <div className="language-switch">
-        <button onClick={() => setLang("es")}>ES</button>
-        <button onClick={() => setLang("en")}>EN</button>
-      </div>
+      <p>
+        I build web applications using React, Node.js and PostgreSQL.
+      </p>
 
-      <h1>{text[lang].title}</h1>
-      <h2>{text[lang].subtitle}</h2>
-
-      {/* Botones sociales */}
-      <div className="social-buttons">
-        <a href="https://github.com/Churiflow" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/robert-lopez-ita-b4147a277/" target="_blank">LinkedIn</a>
-        <a href="mailto:yavar852@gmail.com">Email</a>
-      </div>
-
+      <p>
+        Desarrollo aplicaciones web modernas con React, Node.js y PostgreSQL.
+      </p>
     </div>
   );
 }

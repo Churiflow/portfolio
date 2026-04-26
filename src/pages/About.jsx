@@ -1,29 +1,17 @@
-function About({ language }) {
-
-  const content = {
-    en: {
-      title: "About Me",
-      text: "Junior Full Stack Developer passionate about building web applications using React, Node.js,PHP and  Python  . I enjoy learning cybersecurity and improving code security."
-    },
-    es: {
-      title: "Sobre mí",
-      text: "Desarrollador Full Stack Junior apasionado por crear aplicaciones web con React, Node.js, PHP  y Python. Me gusta la ciberseguridad y mejorar la seguridad del código."
-    }
-  }
-
-  const t = content[language]
-
+function About() {
   return (
-    <section style={styles.section}>
-      <h1>{t.title}</h1>
-      <p style={styles.text}>{t.text}</p>
-    </section>
-  )
+    <div style={{padding: "40px"}}>
+      <h1>About me / Sobre mí</h1>
+
+      <p>
+        Junior Full Stack Developer passionate about cybersecurity and web development.
+      </p>
+
+      <p>
+        Desarrollador Full Stack Junior apasionado por la ciberseguridad y el desarrollo web.
+      </p>
+    </div>
+  );
 }
 
-const styles = {
-  section: { padding: "40px" },
-  text: { marginTop: "15px", lineHeight: "1.6" }
-}
-
-export default About
+export default About;
