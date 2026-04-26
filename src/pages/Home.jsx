@@ -30,7 +30,7 @@ function Home() {
       <div className="social-buttons">
         <a href="https://github.com/Churiflow" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/robert-lopez-ita-b4147a277/" target="_blank">LinkedIn</a>
-        <a href="mailto:tuemail@gmail.com">Email</a>
+        <a href="mailto:yavar852@gmail.com">Email</a>
       </div>
 
     </div>
