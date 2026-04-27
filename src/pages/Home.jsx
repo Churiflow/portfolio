@@ -52,7 +52,7 @@ function Home({ lang }) {
 
       <section id="contact">
         <h2>{lang === "es" ? "📬 Contacto" : "📬 Contact"}</h2>
-        <p>Email: robertlopezita@gmail.com</p>
+        <p>Email: yabar852@gmail.com</p>
         <p>LinkedIn: linkedin.com/in/robert-lopez-ita-b4147a277</p>
       </section>
     </>
