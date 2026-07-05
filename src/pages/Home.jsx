@@ -7,7 +7,7 @@ function Home({ lang }) {
       es: "Aplicación Full Stack (Python/Flask/SQLite) desplegada en Vercel Serverless. Auditada ofensivamente contra SQL Injection, Session Hijacking y robo de credenciales en pasarela de pago; protegida con criptografía y tokens robustos.",
       en: "Full Stack Application (Python/Flask/SQLite) deployed on Vercel Serverless. Offensively audited against SQL Injection, Session Hijacking, and payment gateway credential harvesting; protected using cryptography and robust tokens.",
       link: "https://github.com/Churiflow/tienda-flask-pro",
-      demo: "https://tienda-flask-pro.vercel.app" // Cambia esto por tu URL real de Vercel
+      demo: "https://tienda-flask-pro-1.onrender.com/"
     },
     {
       titulo: "CRM Full Stack",
@@ -29,6 +29,29 @@ function Home({ lang }) {
     }
   ];
 
+  // Listado de herramientas con sus respectivos iconos oficiales optimizados de Devicon
+  const skillsDev = [
+    { name: "React", icon: "react/react-original.svg" },
+    { name: "Node.js", icon: "nodejs/nodejs-original.svg" },
+    { name: "TypeScript", icon: "typescript/typescript-original.svg" },
+    { name: "Python", icon: "python/python-original.svg" },
+    { name: "Flask", icon: "flask/flask-original.svg" },
+    { name: "PHP", icon: "php/php-original.svg" },
+    { name: "JavaScript", icon: "javascript/javascript-original.svg" },
+    { name: "Jest", icon: "jest/jest-plain.svg" },
+    { name: "Cypress", icon: "cypressio/cypressio-original.svg" }
+  ];
+
+  const skillsSec = [
+    { name: "Linux", icon: "linux/linux-original.svg" },
+    { name: "PostgreSQL", icon: "postgresql/postgresql-original.svg" },
+    { name: "MongoDB", icon: "mongodb/mongodb-original.svg" },
+    { name: "SQLite", icon: "sqlite/sqlite-original.svg" },
+    { name: "Bash Shell", icon: "bash/bash-original.svg" },
+    { name: "JWT Sec", icon: "embeddedhtml5/embeddedhtml5-original.svg" }, // Representativo para Tokens
+    { name: "Crypto", icon: "git/git-original.svg" } // Representativo para control seguro
+  ];
+
   return (
     <>
       {/* HERO SECTION */}
@@ -39,8 +62,8 @@ function Home({ lang }) {
         </h1>
         <p>
           {lang === "es"
-            ? "Full Stack Developer | Security Researcher & QA Engineer"
-            : "Full Stack Developer | Security Researcher & QA Engineer"}
+            ? "Full Stack Developer | Security Researcher & QA Automation"
+            : "Full Stack Developer | Security Researcher & QA Automation"}
         </p>
         <p className="termux-subtitle">
           churiflow@termux:~# ./audit_app.sh --target=vercel_serverless --exploit=sql_injection
@@ -49,14 +72,16 @@ function Home({ lang }) {
 
       {/* PROJECTS SECTION */}
       <section id="projects">
-        <h2>{lang === "es" ? "🚀 Proyectos Auditados y Desplegados" : "🚀 Audited & Deployed Projects"}</h2>
+        <h2>{lang === "es" ? "🚀 Proyectos Auditados" : "🚀 Audited Projects"}</h2>
         <div className="projects-grid">
           {proyectos.map((proy, index) => (
             <div className="card" key={index}>
-              <h3>{proy.titulo}</h3>
-              <p>{lang === "es" ? proy.es : proy.en}</p>
+              <div>
+                <h3>{proy.titulo}</h3>
+                <p>{lang === "es" ? proy.es : proy.en}</p>
+              </div>
               
-              <div style={{ marginTop: '15px', display: 'flex', gap: '15px' }}>
+              <div className="links-container">
                 <a href={proy.link} target="_blank" rel="noreferrer" className="btn-link code-btn">
                   {lang === "es" ? "Código 💻" : "Code 💻"}
                 </a>
@@ -71,22 +96,35 @@ function Home({ lang }) {
         </div>
       </section>
 
-      {/* SKILLS SECTION */}
+      {/* SKILLS SECTION CON LOGOS CONECTADOS */}
       <section id="skills">
-        <h2>{lang === "es" ? "🛡️ Arsenal Técnico y de Auditoría" : "🛡️ Tech Stack & Auditing Arsenal"}</h2>
+        <h2>{lang === "es" ? "🛡️ Arsenal Técnico" : "🛡️ Technical Arsenal"}</h2>
         <div className="skills-container">
+          
           <div className="skills-box">
-            <h3>Full Stack & QA Automation</h3>
-            <div className="tags">
-              {["React", "Node.js", "TypeScript", "Python", "Flask", "PHP", "JavaScript", "Jest (Backend Testing)", "Cypress (Frontend Testing)", "Caja Blanca / Negra / Gris"].map((s, i) => <span key={i}>{s}</span>)}
+            <h3>Full Stack & Testing</h3>
+            <div className="grid-badges">
+              {skillsDev.map((s, i) => (
+                <div className="skill-badge" key={i}>
+                  <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${s.icon}`} alt={s.name} />
+                  <span>{s.name}</span>
+                </div>
+              ))}
             </div>
           </div>
+
           <div className="skills-boxSec">
-            <h3>SecDevOps & Red Team Mindset</h3>
-            <div className="tags">
-              {["Linux / Parrot OS", "OverTheWire (Bandit)", "SQL Injection Auditing", "Session Hijacking Defense", "Data Harvesting Mitigation", "Cryptography", "JWT Security", "PostgreSQL / SQLite / Mongo"].map((s, i) => <span key={i}>{s}</span>)}
+            <h3>SecDevOps & Infrastructure</h3>
+            <div className="grid-badges">
+              {skillsSec.map((s, i) => (
+                <div className="skill-badge" key={i}>
+                  <img src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${s.icon}`} alt={s.name} />
+                  <span>{s.name}</span>
+                </div>
+              ))}
             </div>
           </div>
+
         </div>
       </section>
 
