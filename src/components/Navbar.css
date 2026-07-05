@@ -1,26 +1,72 @@
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background: #0f172a;
+  box-sizing: border-box; /* Evita que el padding desborde la pantalla */
+  background: #0f172a; /* Fondo oscuro tipo slate */
   color: white;
   display: flex;
   justify-content: space-between;
-  padding: 15px 40px;
+  align-items: center;
+  padding: 12px 20px; /* Padding ajustado para pantallas de celular */
   z-index: 1000;
+  border-bottom: 1px solid #1e293b;
 }
 
 .logo {
-  font-size: 22px;
-}
-
-.links a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #00d8ff;
+  font-size: 20px;
   font-weight: bold;
+  color: #00d8ff; /* Color celeste React */
+  margin: 0;
 }
 
-.links a:hover {
+.nav-links {
+  display: flex;
+  gap: 12px; /* Espacio ideal entre botones para presionar con el dedo */
+  align-items: center;
+}
+
+/* Estilos para tus botones que actúan como enlaces */
+.nav-links button {
+  background: none;
+  border: none;
+  color: #94a3b8; /* Gris suave de fondo */
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 8px;
+  transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.nav-links button:hover {
+  color: #00d8ff; /* Cambia a celeste al pasar el cursor o tocar */
+}
+
+/* Estilo especial para resaltar el botón de idioma */
+.nav-links .lang-btn {
+  background: #1e293b;
+  padding: 6px 10px;
+  border-radius: 6px;
   color: white;
+  border: 1px solid #334155;
+}
+
+.nav-links .lang-btn:hover {
+  background: #334155;
+  color: white;
+}
+
+/* Ajuste rápido para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+  .logo {
+    font-size: 18px;
+  }
+  .nav-links button {
+    font-size: 13px;
+    padding: 4px 6px;
+  }
 }
