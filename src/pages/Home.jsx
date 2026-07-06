@@ -1,35 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Home({ lang }) {
+  // Estado para controlar qué reporte de auditoría está abierto
+  const [reporteAbierto, setReporteAbierto] = useState(null);
+
   const proyectos = [
     {
+      titulo: "🚀 Startup / Empresa Propia (En Desarrollo)",
+      es: "Plataforma SaaS corporativa de alta disponibilidad. Diseñada bajo Arquitectura Limpia, desacoplada en microservicios y optimizada para despliegues elásticos en la nube.",
+      en: "Enterprise SaaS high-availability platform. Designed under Clean Architecture, decoupled into microservices, and optimized for elastic cloud deployments.",
+      link: "https://github.com/Churiflow/Root-Engineers", // Apunta a tu repo o el de la empresa
+      demo: "https://render.com" // Aquí pondrás tu link de Render cuando lo subamos
+    },
+    {
       titulo: "TiendaMaster (Full Stack)",
-      es: "Aplicación Full Stack (Python/Flask/SQLite) desplegada en Vercel Serverless. Auditada ofensivamente contra SQL Injection, Session Hijacking y robo de credenciales en pasarela de pago; protegida con criptografía y tokens robustos.",
-      en: "Full Stack Application (Python/Flask/SQLite) deployed on Vercel Serverless. Offensively audited against SQL Injection, Session Hijacking, and payment gateway credential harvesting; protected using cryptography and robust tokens.",
+      es: "Aplicación Full Stack (Python/Flask/SQLite) desplegada en Vercel Serverless. Auditada ofensivamente contra SQL Injection, Session Hijacking y robo de credenciales en pago; protegida con criptografía.",
+      en: "Full Stack Application (Python/Flask/SQLite) deployed on Vercel Serverless. Offensively audited against SQL Injection, Session Hijacking, and payment data harvesting; protected with cryptography.",
       link: "https://github.com/Churiflow/tienda-flask-pro",
       demo: "https://tienda-flask-pro-1.onrender.com/"
     },
     {
       titulo: "CRM Full Stack",
-      es: "Sistema de administración usando React, Node.js y PostgreSQL con control de accesos protegido.",
-      en: "Management system using React, Node.js, and PostgreSQL with protected access control.",
+      es: "Sistema de administración usando React, Node.js y PostgreSQL con control de accesos protegido y pruebas automatizadas.",
+      en: "Management system using React, Node.js, and PostgreSQL with protected access control and automated testing.",
       link: "https://github.com/Churiflow/CRM-Full-Stack-"
     },
     {
       titulo: "Auth JWT API",
-      es: "Autenticación segura mediante tokens JWT implementada con TypeScript. Diseñada bajo estándares criptográficos fuertes.",
-      en: "Secure JWT token authentication implemented with TypeScript. Designed under strong cryptographic standards.",
+      es: "Autenticación segura mediante tokens JWT implementada con TypeScript y evaluada con pruebas de Caja Blanca.",
+      en: "Secure JWT token authentication implemented with TypeScript and evaluated with White-Box testing.",
       link: "https://github.com/Churiflow/node-auth-jwt-api-rest-typescript"
-    },
-    {
-      titulo: "Node API REST Mongo",
-      es: "API REST escalable utilizando Node.js y MongoDB con sanitización de entradas de datos.",
-      en: "Scalable REST API utilizing Node.js and MongoDB with input data sanitization.",
-      link: "https://github.com/Churiflow/node_api_rest_mongo"
     }
   ];
 
-  // Listado de herramientas con sus respectivos iconos oficiales optimizados de Devicon
   const skillsDev = [
     { name: "React", icon: "react/react-original.svg" },
     { name: "Node.js", icon: "nodejs/nodejs-original.svg" },
@@ -48,9 +51,31 @@ function Home({ lang }) {
     { name: "MongoDB", icon: "mongodb/mongodb-original.svg" },
     { name: "SQLite", icon: "sqlite/sqlite-original.svg" },
     { name: "Bash Shell", icon: "bash/bash-original.svg" },
-    { name: "JWT Sec", icon: "embeddedhtml5/embeddedhtml5-original.svg" }, // Representativo para Tokens
-    { name: "Crypto", icon: "git/git-original.svg" } // Representativo para control seguro
+    { name: "JWT Sec", icon: "embeddedhtml5/embeddedhtml5-original.svg" },
+    { name: "Crypto", icon: "git/git-original.svg" }
   ];
+
+  // Logs interactivos de tus auditorías locales
+  const logsAuditoria = {
+    tiendamaster: `[+] TARGET: https://tienda-flask-pro.vercel.app
+[+] AUDIT TYPE: Red Team / Offensive Security Test
+[!] VULNERABILITY FOUND: SQL Injection Vulnerability on /login (POST)
+    -> Payload used: admin' --
+    -> Result: Authentication bypass achieved. Session token generated without valid password.
+[🛡️] MITIGATION APPLIED:
+    -> Implemented Parameterized Queries using SQLAlchemy ORM.
+    -> Added Input Sanitization layer regex pattern checking.
+[✓] STATUS: SECURED & PATCHED`,
+
+    authapi: `[+] TARGET: Auth JWT API Rest (TypeScript)
+[+] AUDIT TYPE: Secure Code Review (White Box Testing)
+[!] WEAKNESS FOUND: Weak JWT Signing Secret & Lack of Token Expiration
+    -> Risk: High probability of brute-force attacks to forge valid tokens.
+[🛡️] MITIGATION APPLIED:
+    -> Migrated to strong asymmetric cryptography (RS256) via environment variables.
+    -> Enforced strict token expiration (exp: '15m') and secure HTTP-Only cookies.
+[✓] STATUS: SECURED & PATCHED`
+  };
 
   return (
     <>
@@ -72,7 +97,7 @@ function Home({ lang }) {
 
       {/* PROJECTS SECTION */}
       <section id="projects">
-        <h2>{lang === "es" ? "🚀 Proyectos Auditados" : "🚀 Audited Projects"}</h2>
+        <h2>{lang === "es" ? "🚀 Proyectos e Iniciativas" : "🚀 Projects & Ventures"}</h2>
         <div className="projects-grid">
           {proyectos.map((proy, index) => (
             <div className="card" key={index}>
@@ -96,11 +121,53 @@ function Home({ lang }) {
         </div>
       </section>
 
-      {/* SKILLS SECTION CON LOGOS CONECTADOS */}
+      {/* NEW INTERACTIVE AUDIT SIMULATOR SECTION */}
+      <section id="audit-logs">
+        <h2>{lang === "es" ? "🕵️‍♂️ Consola de Auditoría Red Team" : "🕵️‍♂️ Red Team Audit Logs"}</h2>
+        <p style={{ color: '#94a3b8', marginBottom: '20px', fontSize: '16px' }}>
+          {lang === "es" 
+            ? "Haz clic en los proyectos para ver los reportes de penetración y parches de seguridad aplicados localmente:" 
+            : "Click on the projects to view penetration testing reports and applied local security patches:"}
+        </p>
+        
+        <div style={{ display: 'flex', gap: '15px', marginBottom: '20px' }}>
+          <button 
+            onClick={() => setReporteAbierto(reporteAbierto === 'tiendamaster' ? null : 'tiendamaster')}
+            className="btn-link code-btn" style={{ cursor: 'pointer', padding: '12px' }}
+          >
+            {reporteAbierto === 'tiendamaster' ? "✖ Cerrar Log TiendaMaster" : "👁 Ver Log TiendaMaster"}
+          </button>
+          <button 
+            onClick={() => setReporteAbierto(reporteAbierto === 'authapi' ? null : 'authapi')}
+            className="btn-link code-btn" style={{ cursor: 'pointer', padding: '12px' }}
+          >
+            {reporteAbierto === 'authapi' ? "✖ Cerrar Log Auth API" : "👁 Ver Log Auth API"}
+          </button>
+        </div>
+
+        {/* Pantalla de Terminal Interactiva */}
+        {reporteAbierto && (
+          <pre style={{
+            background: '#020617',
+            color: '#34d399',
+            padding: '20px',
+            borderRadius: '12px',
+            border: '1px solid #10b981',
+            fontFamily: 'Courier New, monospace',
+            fontSize: '14px',
+            overflowX: 'auto',
+            whiteSpace: 'pre-wrap',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
+          }}>
+            {logsAuditoria[reporteAbierto]}
+          </pre>
+        )}
+      </section>
+
+      {/* SKILLS SECTION */}
       <section id="skills">
         <h2>{lang === "es" ? "🛡️ Arsenal Técnico" : "🛡️ Technical Arsenal"}</h2>
         <div className="skills-container">
-          
           <div className="skills-box">
             <h3>Full Stack & Testing</h3>
             <div className="grid-badges">
@@ -112,7 +179,6 @@ function Home({ lang }) {
               ))}
             </div>
           </div>
-
           <div className="skills-boxSec">
             <h3>SecDevOps & Infrastructure</h3>
             <div className="grid-badges">
@@ -124,7 +190,6 @@ function Home({ lang }) {
               ))}
             </div>
           </div>
-
         </div>
       </section>
 
@@ -133,8 +198,8 @@ function Home({ lang }) {
         <h2>{lang === "es" ? "👨‍💻 Sobre mí" : "👨‍💻 About me"}</h2>
         <p>
           {lang === "es"
-            ? "Desarrollador Full Stack enfocado en la resiliencia y seguridad del software. No solo construyo aplicaciones con JavaScript, PHP y Python; las pongo a prueba mediante metodologías de testing avanzado (Caja Negra/Blanca con Jest y Cypress) y simulaciones de ataques reales (Red Team) para implementar defensas criptográficas robustas antes de llevar el código a producción."
-            : "Full Stack Developer focused on software resilience and security. I don't just build applications using JavaScript, PHP, and Python; I break them using advanced testing methodologies (Black/White Box with Jest & Cypress) and real-world attack vectors (Red Team) to deploy robust cryptographic mitigations before code hits production."}
+            ? "Desarrollador Full Stack enfocado en la resiliencia y seguridad del software y fundador de mi propia iniciativa tecnológica. No solo construyo aplicaciones con JavaScript, PHP y Python; las pongo a prueba mediante metodologías de testing avanzado (Caja Negra/Blanca con Jest y Cypress) y simulaciones de ataques reales (Red Team) para implementar defensas criptográficas robustas antes de llevar el código a producción."
+            : "Full Stack Developer focused on software resilience and security, and founder of my own tech venture. I don't just build applications using JavaScript, PHP, and Python; I break them using advanced testing methodologies (Black/White Box with Jest & Cypress) and real-world attack vectors (Red Team) to deploy robust cryptographic mitigations before code hits production."}
         </p>
       </section>
 
