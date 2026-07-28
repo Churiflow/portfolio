@@ -1,3 +1,99 @@
+/* BARRA DE NAVEGACIÓN HACKER PREMIUM */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(3, 7, 18, 0.75); /* Fondo ultra oscuro transparente */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  z-index: 9999;
+}
+
+/* Contenedor del nombre/logo en la barra */
+nav .logo {
+  font-weight: 800;
+  font-size: 18px;
+  color: #38bdf8;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+/* Contenedor de los enlaces */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+
+/* Enlaces individuales */
+nav ul li a {
+  text-decoration: none;
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+/* Botón especial del selector de Idiomas en el menú */
+.lang-btn {
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #38bdf8;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.lang-btn:hover {
+  background: #38bdf8;
+  color: #0b111e;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
+
+/* El botón del CV interactivo en el Hero */
+.cv-terminal-btn {
+  font-family: 'Courier New', Courier, monospace !important;
+  background: #1e1b4b; /* Tono morado/cyberpunk oscuro */
+  color: #c084fc;
+  border: 1px solid #a855f7;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.cv-terminal-btn:hover {
+  background: #a855f7;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  transform: translateY(-3px);
+}
+
+
 /* RESETEO Y CONFIGURACIÓN PREMIUM */
 * {
   margin: 0;
@@ -251,4 +347,27 @@ section {
 }
 #contact a:hover {
   text-decoration: underline;
+}
+
+/* DETALLES DE CONSOLA TERMUX EN EL HERO */
+.termux-cli-sub {
+  background: #020617;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  border-left: 3px solid #38bdf8;
+  margin: 15px 0;
+  display: inline-block;
+}
+.user-terminal {
+  color: #4ade80; /* Verde terminal */
+  font-weight: bold;
+}
+.command-text {
+  color: #f8fafc; /* Blanco hueso */
+}
+.prompt-color {
+  color: #4ade80;
+  margin-right: 5px;
 }
