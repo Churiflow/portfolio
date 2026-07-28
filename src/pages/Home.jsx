@@ -17,7 +17,7 @@ function Home({ lang }) {
       es: "Aplicación Full Stack (Python/Flask/SQLite) desplegada en Vercel Serverless. Auditada ofensivamente contra SQL Injection, Session Hijacking y robo de credenciales; protegida con criptografía.",
       en: "Full Stack Application (Python/Flask/SQLite) deployed on Vercel Serverless. Offensively audited against SQL Injection, Session Hijacking, and payment data harvesting; protected with cryptography.",
       link: "https://github.com/Churiflow/tienda-flask-pro",
-      demo: "https://tienda-flask-pro.vercel.app"
+      demo: "https://tienda-flask-pro-1.onrender.com/"
     },
     {
       titulo: "CRM Full Stack",
