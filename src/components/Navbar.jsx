@@ -1,13 +1,12 @@
 import React from 'react';
 
 function Navbar({ lang, setLang }) {
-  // Estilos inline para asegurar que se apliquen sí o sí
   const navStyle = {
     position: 'fixed',
     top: 0,
     left: 0,
     width: '100%',
-    background: 'rgba(3, 7, 18, 0.9)',
+    backgroundColor: 'rgba(3, 7, 18, 0.95)',
     backdropFilter: 'blur(12px)',
     WebkitBackdropFilter: 'blur(12px)',
     borderBottom: '1px solid rgba(56, 189, 248, 0.2)',
@@ -16,6 +15,7 @@ function Navbar({ lang, setLang }) {
     alignItems: 'center',
     padding: '12px 20px',
     zIndex: 99999,
+    boxSizing: 'border-box'
   };
 
   const logoStyle = {
@@ -27,7 +27,7 @@ function Navbar({ lang, setLang }) {
 
   const ulStyle = {
     display: 'flex',
-    list-style: 'none',
+    listStyle: 'none',
     gap: '10px',
     alignItems: 'center',
     margin: 0,
@@ -37,13 +37,9 @@ function Navbar({ lang, setLang }) {
   const linkStyle = {
     textDecoration: 'none',
     color: '#94a3b8',
-    fontSize: '11px',
+    fontSize: '12px',
     fontWeight: '700',
     textTransform: 'uppercase',
-    letterSpacing: '0.5px',
-    padding: '6px 8px',
-    background: 'transparent',
-    border: 'none',
     fontFamily: 'sans-serif'
   };
 
@@ -64,7 +60,6 @@ function Navbar({ lang, setLang }) {
       <ul style={ulStyle}>
         <li><a href="#home" style={linkStyle}>{lang === "es" ? "Inicio" : "Home"}</a></li>
         <li><a href="#projects" style={linkStyle}>{lang === "es" ? "Proyectos" : "Projects"}</a></li>
-        <li><a href="#skills" style={linkStyle}>{lang === "es" ? "Arsenal" : "Skills"}</a></li>
         <li><a href="#about" style={linkStyle}>{lang === "es" ? "Sobre mí" : "About"}</a></li>
         <li>
           <button style={btnStyle} onClick={() => setLang(lang === "es" ? "en" : "es")}>
